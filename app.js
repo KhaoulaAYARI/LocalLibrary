@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const cors = require("cors");
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
@@ -10,6 +11,8 @@ const usersRouter = require('./routes/users');
 const catalogRouter = require("./routes/catalog"); // Import catalog routes
 
 const app = express();
+app.use(cors());
+
 
 // View engine setup (Pug)
 app.set('views', path.join(__dirname, 'views'));
